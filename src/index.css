@@ -1,0 +1,125 @@
+/* src/index.css */
+@import url('https://fonts.googleapis.com/css2?family=Poppins:ital,wght@0,100;0,200;0,300;0,400;0,500;0,600;0,700;0,800;0,900;1,100;1,200;1,300;1,400;1,500;1,600;1,700;1,800;1,900&display=swap');
+
+* {
+  margin: 0;
+  padding: 0;
+  box-sizing: border-box;
+}
+
+body {
+  font-family: 'Poppins', sans-serif;
+  background-color: #FFFFFF;
+  color: #121212;
+  overflow-x: hidden;
+}
+
+h1, h2, h3, h4, h5, .playfair {
+  font-family: 'Playfair Display', serif;
+}
+
+.gold-text {
+  color: #D4AF37 !important;
+}
+
+.gold-bg {
+  background-color: #D4AF37 !important;
+}
+
+.gold-border {
+  border-color: #D4AF37 !important;
+}
+
+.section-padding {
+  padding: 100px 0;
+}
+
+@media (max-width: 768px) {
+  .section-padding {
+    padding: 60px 0;
+  }
+}
+
+.section-title {
+  font-size: 2.8rem;
+  font-weight: 600;
+  margin-bottom: 1rem;
+  position: relative;
+  display: inline-block;
+}
+
+.section-title:after {
+  content: '';
+  position: absolute;
+  bottom: -12px;
+  left: 0;
+  width: 70px;
+  height: 3px;
+  background: #D4AF37;
+}
+
+.section-subtitle {
+  font-size: 1.1rem;
+  color: #666;
+  max-width: 700px;
+  margin: 1.5rem auto 0;
+}
+
+.btn-gold {
+  background-color: #D4AF37;
+  color: #121212;
+  border: none;
+  padding: 12px 32px;
+  font-weight: 600;
+  border-radius: 40px;
+  transition: all 0.3s ease;
+}
+
+.btn-gold:hover {
+  background-color: #b8962e;
+  color: #121212;
+  transform: translateY(-2px);
+  box-shadow: 0 8px 20px rgba(212, 175, 55, 0.3);
+}
+
+.btn-outline-gold {
+  background: transparent;
+  border: 2px solid #D4AF37;
+  color: #D4AF37;
+  padding: 10px 28px;
+  font-weight: 600;
+  border-radius: 40px;
+  transition: all 0.3s ease;
+}
+
+.btn-outline-gold:hover {
+  background: #D4AF37;
+  color: #121212;
+  transform: translateY(-2px);
+}
+
+.card-hover {
+  transition: all 0.3s ease;
+  border: none;
+  box-shadow: 0 5px 20px rgba(0,0,0,0.05);
+}
+
+.card-hover:hover {
+  transform: translateY(-8px);
+  box-shadow: 0 20px 35px rgba(0,0,0,0.1);
+}
+
+/* Custom animations */
+[data-aos] {
+  opacity: 0;
+  transition: opacity 0.6s ease, transform 0.6s ease;
+}
+
+.fade-up {
+  transform: translateY(30px);
+}
+
+.fade-up.visible {
+  opacity: 1;
+  transform: translateY(0);
+}
