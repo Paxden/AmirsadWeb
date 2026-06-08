@@ -92,7 +92,7 @@ const PARTICLES = Array.from({ length: 8 }, (_, i) => ({
 const STATS = [
   {
     icon: FaTrophy,
-    value: 15,
+    value: 10,
     suffix: "+",
     label: "Years Excellence",
     description: "Industry Leadership",
@@ -100,7 +100,7 @@ const STATS = [
   },
   {
     icon: FaHandshake,
-    value: 250,
+    value: 150,
     suffix: "+",
     label: "Global Partners",
     description: "Trusted Worldwide",
@@ -116,7 +116,7 @@ const STATS = [
   },
   {
     icon: FaChartLine,
-    value: 500,
+    value: 50,
     suffix: "M+",
     label: "Transaction Value",
     description: "USD Total Volume",

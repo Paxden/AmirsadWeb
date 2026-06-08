@@ -1,22 +1,45 @@
 // src/pages/Contact.jsx
-import { useState, useEffect, useRef } from 'react';
-import { Container, Row, Col, Form, Button, Accordion, Alert } from 'react-bootstrap';
-import { 
-   FaPhoneAlt, FaEnvelope, FaCheckCircle, FaWhatsapp, FaTelegram,
-  FaLinkedin, FaTwitter, FaPaperPlane, FaUser, FaComment,
-  FaBuilding, FaGlobe, FaShieldAlt
-} from 'react-icons/fa';
-import { HiOutlineMail } from 'react-icons/hi';
-import gsap from 'gsap';
-import { ScrollTrigger } from 'gsap/ScrollTrigger';
+import { useState, useEffect, useRef } from "react";
+import {
+  Container,
+  Row,
+  Col,
+  Form,
+  Button,
+  Accordion,
+  Alert,
+} from "react-bootstrap";
+import {
+  FaPhoneAlt,
+  FaEnvelope,
+  FaCheckCircle,
+  FaWhatsapp,
+  FaTelegram,
+  FaLinkedin,
+  FaTwitter,
+  FaPaperPlane,
+  FaUser,
+  FaComment,
+  FaBuilding,
+  FaGlobe,
+  FaShieldAlt,
+} from "react-icons/fa";
+import { HiOutlineMail } from "react-icons/hi";
+import gsap from "gsap";
+import { ScrollTrigger } from "gsap/ScrollTrigger";
 
 gsap.registerPlugin(ScrollTrigger);
 
 const Contact = () => {
-  const [formData, setFormData] = useState({ name: '', email: '', message: '', subject: '' });
+  const [formData, setFormData] = useState({
+    name: "",
+    email: "",
+    message: "",
+    subject: "",
+  });
   const [submitted, setSubmitted] = useState(false);
   const [loading, setLoading] = useState(false);
-  
+
   const heroRef = useRef(null);
   const titleRef = useRef(null);
   const infoRef = useRef(null);
@@ -31,41 +54,79 @@ const Contact = () => {
     setTimeout(() => {
       setLoading(false);
       setSubmitted(true);
-      setFormData({ name: '', email: '', message: '', subject: '' });
+      setFormData({ name: "", email: "", message: "", subject: "" });
       setTimeout(() => setSubmitted(false), 5000);
     }, 1500);
   };
 
   const faqs = [
-    { q: 'What documentation is required for trading?', a: 'Buyers need valid KYC documents including proof of funds, corporate registration, and identification. Suppliers require mining licenses, export permits, and corporate documentation. All documents must be certified and translated to English.' },
-    { q: 'How long does verification take?', a: 'Standard verification takes 3-5 business days. Expedited options available for pre-qualified entities. Our team works efficiently to ensure minimal delays while maintaining thorough compliance checks.' },
-    { q: 'What payment methods are accepted?', a: 'We facilitate wire transfers, escrow services, and LC arrangements based on transaction structure. Payment terms are negotiated based on the specific transaction and counterparty relationship.' },
-    { q: 'Do you offer inspection services?', a: 'Yes, we coordinate with globally recognized inspection agencies like SGS, Bureau Veritas, and Alex Stewart. Inspection includes weight verification, assay testing, and packaging confirmation.' },
-    { q: 'What is your minimum order quantity?', a: 'Minimum order quantities vary by supplier and gold grade. Typically, we handle transactions starting from 50kg for institutional buyers.' },
-    { q: 'Do you provide logistics support?', a: 'Yes, we offer comprehensive logistics coordination including shipping, insurance, and customs clearance through our global network of partners.' }
+    {
+      q: "What documentation is required for trading?",
+      a: "Buyers need valid KYC documents including proof of funds, corporate registration, and identification. Suppliers require mining licenses, export permits, and corporate documentation. All documents must be certified and translated to English.",
+    },
+    {
+      q: "How long does verification take?",
+      a: "Standard verification takes 3-5 business days. Expedited options available for pre-qualified entities. Our team works efficiently to ensure minimal delays while maintaining thorough compliance checks.",
+    },
+    {
+      q: "What payment methods are accepted?",
+      a: "We facilitate wire transfers, escrow services, and LC arrangements based on transaction structure. Payment terms are negotiated based on the specific transaction and counterparty relationship.",
+    },
+    {
+      q: "Do you offer inspection services?",
+      a: "Yes, we coordinate with globally recognized inspection agencies like SGS, Bureau Veritas, and Alex Stewart. Inspection includes weight verification, assay testing, and packaging confirmation.",
+    },
+    {
+      q: "What is your minimum order quantity?",
+      a: "Minimum order quantities vary by supplier and gold grade. Typically, we handle transactions starting from 50kg for institutional buyers.",
+    },
+    {
+      q: "Do you provide logistics support?",
+      a: "Yes, we offer comprehensive logistics coordination including shipping, insurance, and customs clearance through our global network of partners.",
+    },
   ];
 
   const officeInfo = [
-    { icon: FaBuilding, title: 'Headquarters', detail: 'Dubai Multi Commodities Centre, UAE', description: 'JLT, Dubai, United Arab Emirates' },
-    { icon: FaGlobe, title: 'Representative Offices', detail: 'London | Singapore | Johannesburg', description: 'Global presence across key markets' },
-    { icon: FaPhoneAlt, title: 'Phone', detail: '+971 4 123 4567', description: 'Available 9:00 - 18:00 GMT+4' },
-    { icon: FaWhatsapp, title: 'WhatsApp', detail: '+971 50 123 4567', description: 'For urgent inquiries' }
+    {
+      icon: FaBuilding,
+      title: "Headquarters",
+      detail:
+        "WABP Plaza, Zone B08, Dr. Ameyo Adadevoh Way, Jahi District, Abuja, Federal Capital Territory, Nigeria",
+      description: "Jahi, Abuja, Nigeria",
+    },
+    {
+      icon: FaPhoneAlt,
+      title: "Phone",
+      detail: "+234-806-0671-508",
+      description: "Available 9:00 - 18:00 GMT+1",
+    },
+    {
+      icon: FaWhatsapp,
+      title: "WhatsApp",
+      detail: "+234-806-0671-508",
+      description: "For urgent inquiries",
+    },
   ];
 
   useEffect(() => {
     // Hero section animations
     const heroTl = gsap.timeline();
-    heroTl.fromTo(heroRef.current,
-      { opacity: 0, scale: 1.05 },
-      { opacity: 1, scale: 1, duration: 1, ease: "power3.out" }
-    ).fromTo(titleRef.current,
-      { opacity: 0, y: 50 },
-      { opacity: 1, y: 0, duration: 0.8, ease: "back.out(0.7)" },
-      "-=0.6"
-    );
+    heroTl
+      .fromTo(
+        heroRef.current,
+        { opacity: 0, scale: 1.05 },
+        { opacity: 1, scale: 1, duration: 1, ease: "power3.out" },
+      )
+      .fromTo(
+        titleRef.current,
+        { opacity: 0, y: 50 },
+        { opacity: 1, y: 0, duration: 0.8, ease: "back.out(0.7)" },
+        "-=0.6",
+      );
 
     // Office info cards animation
-    gsap.fromTo('.info-card',
+    gsap.fromTo(
+      ".info-card",
       { opacity: 0, x: -30 },
       {
         opacity: 1,
@@ -74,46 +135,62 @@ const Contact = () => {
         duration: 0.6,
         scrollTrigger: {
           trigger: infoRef.current,
-          start: 'top 85%',
-        }
-      }
+          start: "top 85%",
+        },
+      },
     );
 
     // Form animation
-    gsap.fromTo(formRef.current,
+    gsap.fromTo(
+      formRef.current,
       { opacity: 0, y: 30 },
-      { opacity: 1, y: 0, duration: 0.8, ease: "back.out(0.6)",
+      {
+        opacity: 1,
+        y: 0,
+        duration: 0.8,
+        ease: "back.out(0.6)",
         scrollTrigger: {
           trigger: formRef.current,
-          start: 'top 85%',
-        }
-      }
+          start: "top 85%",
+        },
+      },
     );
 
     // Map animation
-    gsap.fromTo(mapRef.current,
+    gsap.fromTo(
+      mapRef.current,
       { opacity: 0, scale: 0.95 },
-      { opacity: 1, scale: 1, duration: 0.8, ease: "power3.out",
+      {
+        opacity: 1,
+        scale: 1,
+        duration: 0.8,
+        ease: "power3.out",
         scrollTrigger: {
           trigger: mapRef.current,
-          start: 'top 85%',
-        }
-      }
+          start: "top 85%",
+        },
+      },
     );
 
     // FAQ section animation
-    gsap.fromTo(faqRef.current,
+    gsap.fromTo(
+      faqRef.current,
       { opacity: 0, y: 30 },
-      { opacity: 1, y: 0, duration: 0.8, ease: "power3.out",
+      {
+        opacity: 1,
+        y: 0,
+        duration: 0.8,
+        ease: "power3.out",
         scrollTrigger: {
           trigger: faqRef.current,
-          start: 'top 85%',
-        }
-      }
+          start: "top 85%",
+        },
+      },
     );
 
     // CTA section animation
-    gsap.fromTo(ctaRef.current,
+    gsap.fromTo(
+      ctaRef.current,
       { opacity: 0, scale: 0.95 },
       {
         opacity: 1,
@@ -122,9 +199,9 @@ const Contact = () => {
         ease: "elastic.out(1, 0.5)",
         scrollTrigger: {
           trigger: ctaRef.current,
-          start: 'top 85%',
-        }
-      }
+          start: "top 85%",
+        },
+      },
     );
 
     // Parallax effect
@@ -134,13 +211,13 @@ const Contact = () => {
         gsap.to(heroRef.current, {
           y: scrolled * 0.3,
           duration: 0,
-          ease: "none"
+          ease: "none",
         });
       }
     };
 
-    window.addEventListener('scroll', handleScroll);
-    return () => window.removeEventListener('scroll', handleScroll);
+    window.addEventListener("scroll", handleScroll);
+    return () => window.removeEventListener("scroll", handleScroll);
   }, []);
 
   return (
@@ -160,7 +237,7 @@ const Contact = () => {
                 Contact <span className="gold-text">Us</span>
               </h1>
               <p className="hero-subtitle">
-                Reach out to our global trade team for inquiries, partnerships, 
+                Reach out to our global trade team for inquiries, partnerships,
                 and support. We're here to assist you 24/7.
               </p>
               <div className="hero-stats">
@@ -182,7 +259,11 @@ const Contact = () => {
         </Container>
         <div className="hero-wave">
           <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 1440 320">
-            <path fill="#0a0a0a" fillOpacity="1" d="M0,96L48,112C96,128,192,160,288,160C384,160,480,128,576,122.7C672,117,768,139,864,154.7C960,171,1056,181,1152,165.3C1248,149,1344,107,1392,85.3L1440,64L1440,320L1392,320C1344,320,1248,320,1152,320C1056,320,960,320,864,320C768,320,672,320,576,320C480,320,384,320,288,320C192,320,96,320,48,320L0,320Z"></path>
+            <path
+              fill="#0a0a0a"
+              fillOpacity="1"
+              d="M0,96L48,112C96,128,192,160,288,160C384,160,480,128,576,122.7C672,117,768,139,864,154.7C960,171,1056,181,1152,165.3C1248,149,1344,107,1392,85.3L1440,64L1440,320L1392,320C1344,320,1248,320,1152,320C1056,320,960,320,864,320C768,320,672,320,576,320C480,320,384,320,288,320C192,320,96,320,48,320L0,320Z"
+            ></path>
           </svg>
         </div>
       </section>
@@ -194,11 +275,12 @@ const Contact = () => {
             <Col lg={5} className="mb-5 mb-lg-0">
               <div ref={infoRef}>
                 <div className="section-badge">Connect With Us</div> <br />
-                <h2 className="info-title">Office <span className="gold-text">Information</span></h2>
+                <h2 className="info-title">
+                  Office <span className="gold-text">Information</span>
+                </h2>
                 <p className="info-subtitle">
                   Visit our headquarters or connect through our global network
                 </p>
-                
                 {officeInfo.map((info, idx) => (
                   <div key={idx} className="info-card">
                     <div className="info-icon">
@@ -211,14 +293,21 @@ const Contact = () => {
                     </div>
                   </div>
                 ))}
-
                 <div className="social-links">
                   <h4>Follow Us</h4>
                   <div className="social-icons">
-                    <a href="#" className="social-icon linkedin"><FaLinkedin /></a>
-                    <a href="#" className="social-icon twitter"><FaTwitter /></a>
-                    <a href="#" className="social-icon whatsapp"><FaWhatsapp /></a>
-                    <a href="#" className="social-icon telegram"><FaTelegram /></a>
+                    <a href="#" className="social-icon linkedin">
+                      <FaLinkedin />
+                    </a>
+                    <a href="#" className="social-icon twitter">
+                      <FaTwitter />
+                    </a>
+                    <a href="#" className="social-icon whatsapp">
+                      <FaWhatsapp />
+                    </a>
+                    <a href="#" className="social-icon telegram">
+                      <FaTelegram />
+                    </a>
                   </div>
                 </div>
               </div>
@@ -229,13 +318,17 @@ const Contact = () => {
                 <div className="form-header">
                   <HiOutlineMail className="form-icon" />
                   <h3>Send a Message</h3>
-                  <p>Fill out the form below and our team will respond within 24 hours</p>
+                  <p>
+                    Fill out the form below and our team will respond within 24
+                    hours
+                  </p>
                 </div>
 
                 {submitted && (
                   <Alert variant="success" className="success-alert">
                     <FaCheckCircle className="me-2" />
-                    Thank you for your message! Our team will respond within 24 hours.
+                    Thank you for your message! Our team will respond within 24
+                    hours.
                   </Alert>
                 )}
 
@@ -243,24 +336,34 @@ const Contact = () => {
                   <Row>
                     <Col md={6}>
                       <Form.Group className="mb-3">
-                        <Form.Label><FaUser className="me-2" />Full Name *</Form.Label>
-                        <Form.Control 
-                          type="text" 
+                        <Form.Label>
+                          <FaUser className="me-2" />
+                          Full Name *
+                        </Form.Label>
+                        <Form.Control
+                          type="text"
                           placeholder="Enter your full name"
                           value={formData.name}
-                          onChange={(e) => setFormData({...formData, name: e.target.value})}
+                          onChange={(e) =>
+                            setFormData({ ...formData, name: e.target.value })
+                          }
                           required
                         />
                       </Form.Group>
                     </Col>
                     <Col md={6}>
                       <Form.Group className="mb-3">
-                        <Form.Label><FaEnvelope className="me-2" />Email Address *</Form.Label>
-                        <Form.Control 
-                          type="email" 
+                        <Form.Label>
+                          <FaEnvelope className="me-2" />
+                          Email Address *
+                        </Form.Label>
+                        <Form.Control
+                          type="email"
                           placeholder="Enter your email"
                           value={formData.email}
-                          onChange={(e) => setFormData({...formData, email: e.target.value})}
+                          onChange={(e) =>
+                            setFormData({ ...formData, email: e.target.value })
+                          }
                           required
                         />
                       </Form.Group>
@@ -268,36 +371,48 @@ const Contact = () => {
                   </Row>
 
                   <Form.Group className="mb-3">
-                    <Form.Label><FaComment className="me-2" />Subject</Form.Label>
-                    <Form.Control 
-                      type="text" 
+                    <Form.Label>
+                      <FaComment className="me-2" />
+                      Subject
+                    </Form.Label>
+                    <Form.Control
+                      type="text"
                       placeholder="What is this regarding?"
                       value={formData.subject}
-                      onChange={(e) => setFormData({...formData, subject: e.target.value})}
+                      onChange={(e) =>
+                        setFormData({ ...formData, subject: e.target.value })
+                      }
                     />
                   </Form.Group>
 
                   <Form.Group className="mb-3">
                     <Form.Label>Message *</Form.Label>
-                    <Form.Control 
-                      as="textarea" 
-                      rows={5} 
+                    <Form.Control
+                      as="textarea"
+                      rows={5}
                       placeholder="Please provide details about your inquiry..."
                       value={formData.message}
-                      onChange={(e) => setFormData({...formData, message: e.target.value})}
+                      onChange={(e) =>
+                        setFormData({ ...formData, message: e.target.value })
+                      }
                       required
                     />
                   </Form.Group>
 
-                  <Button 
-                    type="submit" 
+                  <Button
+                    type="submit"
                     className="btn-gold-primary w-100"
                     disabled={loading}
                   >
                     {loading ? (
-                      <>Sending <span className="spinner-border spinner-border-sm ms-2"></span></>
+                      <>
+                        Sending{" "}
+                        <span className="spinner-border spinner-border-sm ms-2"></span>
+                      </>
                     ) : (
-                      <>Submit Inquiry <FaPaperPlane className="ms-2" /></>
+                      <>
+                        Submit Inquiry <FaPaperPlane className="ms-2" />
+                      </>
                     )}
                   </Button>
                 </Form>
@@ -312,15 +427,18 @@ const Contact = () => {
                 <div className="map-header">
                   <FaGlobe className="map-icon" />
                   <h3>Our Location</h3>
-                  <p>DMCC, Dubai - The Heart of Global Gold Trade</p>
+                  <p>
+                    WABP Plaza, Zone B08, Dr. Ameyo Adadevoh Way, Jahi District,
+                    Abuja, Federal Capital Territory, Nigeria
+                  </p>
                 </div>
                 <div className="map-wrapper">
-                  <iframe 
-                    src="https://maps.google.com/maps?q=DMCC%2C%20Dubai&t=&z=13&ie=UTF8&iwloc=&output=embed" 
-                    width="100%" 
-                    height="400" 
-                    style={{ border: 0 }} 
-                    allowFullScreen 
+                  <iframe
+                    src="https://www.google.com/maps/embed?pb=!1m18!1m12!1m3!1d3939.5847020485107!2d7.425540673674002!3d9.101542887851958!2m3!1f0!2f0!3f0!3m2!1i1024!2i768!4f13.1!3m3!1m2!1s0x104e7572031fadd5%3A0x98444e0a6e950ee8!2sWABP%20Plaza%2C%20Jahi!5e0!3m2!1sen!2suk!4v1780905864676!5m2!1sen!2suk"
+                    width="100%"
+                    height="400"
+                    style={{ border: 0 }}
+                    allowFullScreen
                     loading="lazy"
                     title="Office Location Map"
                   ></iframe>
@@ -335,9 +453,13 @@ const Contact = () => {
               <div ref={faqRef} className="faq-section">
                 <div className="faq-header">
                   <div className="section-badge light">Common Questions</div>
-                  <h2 className="faq-title">Frequently Asked <span className="gold-text">Questions</span></h2>
+                  <h2 className="faq-title">
+                    Frequently Asked{" "}
+                    <span className="gold-text">Questions</span>
+                  </h2>
                   <p className="faq-subtitle">
-                    Find answers to common questions about our services and processes
+                    Find answers to common questions about our services and
+                    processes
                   </p>
                 </div>
 
@@ -347,9 +469,7 @@ const Contact = () => {
                       <Accordion.Header>
                         <FaShieldAlt className="me-2" /> {faq.q}
                       </Accordion.Header>
-                      <Accordion.Body>
-                        {faq.a}
-                      </Accordion.Body>
+                      <Accordion.Body>{faq.a}</Accordion.Body>
                     </Accordion.Item>
                   ))}
                 </Accordion>
@@ -364,8 +484,14 @@ const Contact = () => {
                 <div className="cta-content">
                   <FaWhatsapp className="cta-icon" />
                   <h3>Need Immediate Assistance?</h3>
-                  <p>Connect with our support team directly on WhatsApp for urgent inquiries</p>
-                  <Button href="https://wa.me/971501234567" className="btn-whatsapp">
+                  <p>
+                    Connect with our support team directly on WhatsApp for
+                    urgent inquiries
+                  </p>
+                  <Button
+                    href="https://wa.me/971501234567"
+                    className="btn-whatsapp"
+                  >
                     <FaWhatsapp className="me-2" /> Chat on WhatsApp
                   </Button>
                 </div>
@@ -385,7 +511,7 @@ const Contact = () => {
           overflow: hidden;
           background: linear-gradient(135deg, #0a0a0a 0%, #1a1a1a 100%);
           padding: 180px 0 100px;
-          z-index:-10;
+          z-index: -10;
         }
 
         .hero-background {
@@ -402,7 +528,11 @@ const Contact = () => {
           left: 0;
           right: 0;
           bottom: 0;
-          background: radial-gradient(circle at 30% 50%, rgba(212, 175, 55, 0.1), transparent);
+          background: radial-gradient(
+            circle at 30% 50%,
+            rgba(212, 175, 55, 0.1),
+            transparent
+          );
         }
 
         .hero-pattern {
@@ -418,7 +548,11 @@ const Contact = () => {
           left: 50%;
           width: 600px;
           height: 600px;
-          background: radial-gradient(circle, rgba(212, 175, 55, 0.15), transparent);
+          background: radial-gradient(
+            circle,
+            rgba(212, 175, 55, 0.15),
+            transparent
+          );
           transform: translate(-50%, -50%);
           filter: blur(50px);
         }
@@ -429,7 +563,7 @@ const Contact = () => {
           background: rgba(212, 175, 55, 0.1);
           border: 1px solid rgba(212, 175, 55, 0.3);
           border-radius: 50px;
-          color: #D4AF37;
+          color: #d4af37;
           font-size: 0.9rem;
           margin-bottom: 25px;
         }
@@ -463,7 +597,7 @@ const Contact = () => {
         .hero-stat .stat-number {
           font-size: 2rem;
           font-weight: 700;
-          color: #D4AF37;
+          color: #d4af37;
         }
 
         .hero-stat .stat-label {
@@ -492,7 +626,7 @@ const Contact = () => {
           background: rgba(212, 175, 55, 0.1);
           border: 1px solid rgba(212, 175, 55, 0.3);
           border-radius: 50px;
-          color: #D4AF37;
+          color: #d4af37;
           font-size: 0.85rem;
           font-weight: 500;
           margin-bottom: 20px;
@@ -523,12 +657,12 @@ const Contact = () => {
 
         .info-card:hover {
           transform: translateX(10px);
-          border-color: #D4AF37;
+          border-color: #d4af37;
         }
 
         .info-icon {
           font-size: 2rem;
-          color: #D4AF37;
+          color: #d4af37;
         }
 
         .info-content h4 {
@@ -539,7 +673,7 @@ const Contact = () => {
         }
 
         .info-detail {
-          color: #D4AF37;
+          color: #d4af37;
           font-weight: 500;
           margin-bottom: 5px;
         }
@@ -575,12 +709,12 @@ const Contact = () => {
           justify-content: center;
           background: rgba(212, 175, 55, 0.1);
           border-radius: 50%;
-          color: #D4AF37;
+          color: #d4af37;
           transition: all 0.3s ease;
         }
 
         .social-icon:hover {
-          background: #D4AF37;
+          background: #d4af37;
           color: #0a0a0a;
           transform: translateY(-3px);
         }
@@ -600,7 +734,7 @@ const Contact = () => {
 
         .form-icon {
           font-size: 3rem;
-          color: #D4AF37;
+          color: #d4af37;
           margin-bottom: 15px;
         }
 
@@ -629,7 +763,7 @@ const Contact = () => {
 
         .form-card :global(.form-control:focus) {
           background: rgba(255, 255, 255, 0.08);
-          border-color: #D4AF37;
+          border-color: #d4af37;
           box-shadow: 0 0 0 0.2rem rgba(212, 175, 55, 0.25);
         }
 
@@ -658,7 +792,7 @@ const Contact = () => {
 
         .map-icon {
           font-size: 2.5rem;
-          color: #D4AF37;
+          color: #d4af37;
           margin-bottom: 10px;
         }
 
@@ -725,7 +859,7 @@ const Contact = () => {
 
         .custom-accordion :global(.accordion-button:not(.collapsed)) {
           background: rgba(212, 175, 55, 0.1);
-          color: #D4AF37;
+          color: #d4af37;
         }
 
         .custom-accordion :global(.accordion-button:focus) {
@@ -750,7 +884,7 @@ const Contact = () => {
 
         .cta-icon {
           font-size: 3rem;
-          color: #D4AF37;
+          color: #d4af37;
           margin-bottom: 15px;
         }
 
@@ -767,7 +901,7 @@ const Contact = () => {
         }
 
         .btn-whatsapp {
-          background: linear-gradient(135deg, #25D366, #128C7E);
+          background: linear-gradient(135deg, #25d366, #128c7e);
           border: none;
           padding: 12px 30px;
           font-weight: 600;
@@ -780,7 +914,7 @@ const Contact = () => {
         }
 
         .btn-gold-primary {
-          background: linear-gradient(135deg, #D4AF37, #FFD700);
+          background: linear-gradient(135deg, #d4af37, #ffd700);
           border: none;
           padding: 12px;
           font-weight: 600;

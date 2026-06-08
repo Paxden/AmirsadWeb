@@ -21,17 +21,17 @@ const About = () => {
   const statsRef = useRef(null);
 
   const milestones = [
-    { year: '2010', title: 'Foundation', desc: 'AMIRSAD established in Dubai, UAE.', icon: FaGem, color: '#D4AF37' },
-    { year: '2013', title: 'Global Expansion', desc: 'Operations expanded to 15 countries.', icon: FaGlobe, color: '#FFD700' },
-    { year: '2017', title: 'Verification Hub', desc: 'Launched proprietary supplier verification system.', icon: FaShieldAlt, color: '#D4AF37' },
-    { year: '2020', title: 'Digital Trade', desc: 'Introduced digital trade facilitation platform.', icon: FaChartLine, color: '#FFD700' },
-    { year: '2024', title: 'Industry Leader', desc: 'Recognized as top gold trading facilitator.', icon: FaTrophy, color: '#D4AF37' }
+    { year: '2016', title: 'Foundation', desc: 'AMIRSAD established in Abuja, Nigeria.', icon: FaGem, color: '#D4AF37' },
+    { year: '2019', title: 'Global Expansion', desc: 'Operations expanded to 5 countries.', icon: FaGlobe, color: '#FFD700' },
+    { year: '2021', title: 'Verification Hub', desc: 'Launched proprietary supplier verification system.', icon: FaShieldAlt, color: '#D4AF37' },
+    { year: '2023', title: 'Digital Trade', desc: 'Introduced digital trade facilitation platform.', icon: FaChartLine, color: '#FFD700' },
+    { year: '2025', title: 'Industry Leader', desc: 'Recognized as top gold trading facilitator.', icon: FaTrophy, color: '#D4AF37' }
   ];
 
   const leaders = [
-    { name: 'Amir Sadollah', title: 'Founder & CEO', bio: '20+ years in commodity trading and finance.', expertise: 'Strategic Leadership', icon: FaStar },
-    { name: 'Elena Kovalenko', title: 'Head of Compliance', bio: 'Former regulatory expert at LBMA.', expertise: 'Regulatory Affairs', icon: FaShieldAlt },
-    { name: 'James O\'Connor', title: 'Director of Sourcing', bio: 'Extensive network across African and Asian gold belts.', expertise: 'Global Sourcing', icon: FaGlobe }
+    { name: 'Amir ', title: 'Founder & CEO', bio: '20+ years in commodity trading and finance.', expertise: 'Strategic Leadership', icon: FaStar },
+    { name: ' Amir', title: 'Head of Compliance', bio: 'Former regulatory expert at LBMA.', expertise: 'Regulatory Affairs', icon: FaShieldAlt },
+    { name: 'Amir', title: 'Director of Sourcing', bio: 'Extensive network across African and Asian gold belts.', expertise: 'Global Sourcing', icon: FaGlobe }
   ];
 
   const values = [
@@ -199,7 +199,7 @@ const About = () => {
                   <span className="stat-label">Years Excellence</span>
                 </div>
                 <div className="hero-stat">
-                  <span className="stat-number">35+</span>
+                  <span className="stat-number">25+</span>
                   <span className="stat-label">Countries</span>
                 </div>
                 <div className="hero-stat">
@@ -351,7 +351,7 @@ const About = () => {
                   <div className="stat-number-value" data-target={stat.value.replace(/[^0-9]/g, '')}>
                     0{stat.value.includes('%') ? '%' : ''}
                   </div>
-                  <div className="stat-label">{stat.label}</div>
+                  <div className="stat-label text-white">{stat.label}</div>
                 </div>
               </Col>
             ))}
@@ -410,11 +410,13 @@ const About = () => {
           display: flex;
           gap: 40px;
           margin-top: 30px;
+          z-index: 100;
         }
 
         .hero-stat {
           display: flex;
           flex-direction: column;
+          z-index: 100;
         }
 
         .hero-stat .stat-number {

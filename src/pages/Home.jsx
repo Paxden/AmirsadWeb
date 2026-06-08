@@ -257,11 +257,11 @@ const Home = () => {
                 </div>
                 <div className="feature-item">
                   <FaCheckCircle className="feature-icon" />
-                  <span>250+ Global Partners</span>
+                  <span>150+ Global Partners</span>
                 </div>
                 <div className="feature-item">
                   <FaCheckCircle className="feature-icon" />
-                  <span>$2.5B+ Transaction Value</span>
+                  <span>#2.5B+ Transaction Value</span>
                 </div>
               </div>
               <p className="intro-text">
@@ -1211,7 +1211,7 @@ const Home = () => {
         }
 
         .process-step:hover .step-hover-overlay {
-          opacity: 0.3;
+          opacity: 0.1;
         }
 
         .hover-content {

@@ -28,7 +28,7 @@ const Footer = () => {
           </Col>
           <Col lg={3} md={6} className="mb-4">
             <h6 className="fw-bold mb-3">Contact</h6>
-            <p className="text-white-50 mb-1"><FaPhone className="me-2 gold-text" /> +971 4 123 4567</p>
+            <p className="text-white-50 mb-1"><FaPhone className="me-2 gold-text" /> +234-806-0671-508</p>
             <p className="text-white-50"><FaEnvelope className="me-2 gold-text" /> info@amirsadenergy.com</p>
           </Col>
           <Col lg={3} md={6} className="mb-4">

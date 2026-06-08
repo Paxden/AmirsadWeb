@@ -96,7 +96,7 @@ const Services = () => {
   ];
 
   const stats = [
-    { value: "500+", label: "Successful Trades", icon: FaGem },
+    { value: "100+", label: "Successful Trades", icon: FaGem },
     { value: "35+", label: "Countries Served", icon: FaGlobe },
     { value: "99.9%", label: "Success Rate", icon: FaMedal },
     { value: "24/7", label: "Support Available", icon: FaClock },
@@ -216,11 +216,11 @@ const Services = () => {
               </p>
               <div className="hero-stats">
                 <div className="hero-stat">
-                  <span className="stat-number">15+</span>
+                  <span className="stat-number">10+</span>
                   <span className="stat-label">Years Experience</span>
                 </div>
                 <div className="hero-stat">
-                  <span className="stat-number">250+</span>
+                  <span className="stat-number">150+</span>
                   <span className="stat-label">Global Partners</span>
                 </div>
                 <div className="hero-stat">

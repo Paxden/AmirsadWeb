@@ -30,9 +30,9 @@ const Suppliers = () => {
   ];
 
   const stats = [
-    { value: '250+', label: 'Active Buyers', icon: FaUsers },
+    { value: '150+', label: 'Active Buyers', icon: FaUsers },
     { value: '35+', label: 'Countries', icon: FaGlobe },
-    { value: '$2.5B+', label: 'Trade Volume', icon: FaChartLine },
+    { value: '#2.5B+', label: 'Trade Volume', icon: FaChartLine },
     { value: '100%', label: 'Verification Rate', icon: FaShieldAlt }
   ];
 
@@ -168,7 +168,7 @@ const Suppliers = () => {
                   <span className="stat-label">Qualified Buyers</span>
                 </div>
                 <div className="hero-stat">
-                  <span className="stat-number">35+</span>
+                  <span className="stat-number">25+</span>
                   <span className="stat-label">Countries</span>
                 </div>
                 <div className="hero-stat">

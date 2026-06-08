@@ -97,7 +97,7 @@ const Navbar = () => {
             <GiGoldBar className="gold-icon me-2" size={36} />
             <div className="brand-text">
               <span className="fw-bold playfair brand-main">AMIRSAD</span>
-              <span className="gold-text fw-bold brand-energy"> ENERGY</span>
+              <span className="gold-text fw-bold brand-energy"> ENERGY CONSULT</span>
             </div>
           </BSNavbar.Brand>
           
